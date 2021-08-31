@@ -53,9 +53,12 @@ use std::fmt;
 use std::marker::PhantomData;
 use std::{collections::HashMap, str::FromStr};
 
+use chrono::{offset::FixedOffset, DateTime};
 use serde::de::{self, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer, Serialize};
 use void::Void;
+
+mod datetime;
 
 /// An HTTP Headers type.
 pub type Headers = HashMap<String, Vec<String>>;
@@ -99,7 +102,8 @@ pub struct HttpInteraction {
     /// ```json
     /// { "recorded_at": "Tue, 01 Nov 2011 04:58:44 GMT" }
     /// ```
-    pub recorded_at: String,
+    #[serde(with = "datetime")]
+    pub recorded_at: DateTime<FixedOffset>,
 }
 
 /// A recorded HTTP Response.
