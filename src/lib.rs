@@ -60,6 +60,7 @@ use url::Url;
 use void::Void;
 
 pub use chrono;
+pub use url;
 
 mod datetime;
 
