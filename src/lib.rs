@@ -1,4 +1,4 @@
-//! Serializer and deserializer for the [VCR 6.0 Cassette
+//! Serializer and deserializer for the [VCR Cassette
 //! format](https://relishapp.com/vcr/vcr/v/6-0-0/docs/cassettes/cassette-format).
 //!
 //! # Examples
