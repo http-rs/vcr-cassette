@@ -1,5 +1,6 @@
 [package]
 name = "vcr-cassette"
+version = "2.0.0"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/http-rs/vcr-cassette"
 documentation = "https://docs.rs/vcr-cassette"
