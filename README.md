@@ -74,7 +74,6 @@ Given the following `.json` VCR Cassette recording:
 We can deserialize it using [`serde_json`](https://docs.rs/serde-json):
 
 ```rust
-# #![allow(unused)]
 use std::fs;
 use vcr_cassette::Cassette;
 
