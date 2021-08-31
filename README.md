@@ -41,6 +41,50 @@
   </h3>
 </div>
 
+## Examples
+
+Given the following `.json` VCR Cassette recording:
+```json
+{
+    "http_interactions": [
+        {
+            "request": {
+                "uri": "http://localhost:7777/foo",
+                "body": "",
+                "method": "get",
+                "headers": { "Accept-Encoding": [ "identity" ] }
+            },
+            "response": {
+                "body": "Hello foo",
+                "http_version": "1.1",
+                "status": { "code": 200, "message": "OK" },
+                "headers": {
+                    "Date": [ "Thu, 27 Oct 2011 06:16:31 GMT" ],
+                    "Content-Type": [ "text/html;charset=utf-8" ],
+                    "Content-Length": [ "9" ],
+                }
+            },
+            "recorded_at": "Tue, 01 Nov 2011 04:58:44 GMT"
+        },
+    ],
+    "recorded_with": "VCR 2.0.0"
+}
+```
+
+We can deserialize it using [`serde_json`](https://docs.rs/serde-json):
+
+```rust
+# #![allow(unused)]
+use std::fs;
+use vcr_cassette::Cassette;
+
+let example = fs::read_to_string("tests/fixtures/example.json").unwrap();
+let cassette: Cassette = serde_json::from_str(&example).unwrap();
+```
+
+To deserialize `.yaml` Cassette files use
+[`serde_yaml`](https://docs.rs/serde-yaml) instead.
+
 ## Installation
 ```sh
 $ cargo add vcr-cassette
