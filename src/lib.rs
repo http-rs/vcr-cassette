@@ -58,6 +58,8 @@ use serde::de::{self, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer, Serialize};
 use void::Void;
 
+pub use chrono;
+
 mod datetime;
 
 /// An HTTP Headers type.
