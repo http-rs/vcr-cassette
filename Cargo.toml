@@ -1,6 +1,5 @@
 [package]
 name = "vcr-cassette"
-version = "1.0.2"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/http-rs/vcr-cassette"
 documentation = "https://docs.rs/vcr-cassette"
@@ -19,6 +18,7 @@ authors = [
 serde = { version = "1.0.127", features = ["derive"] }
 void = "1.0.2"
 chrono = "0.4.19"
+url = { version = "2.2.2", features = ["serde"] }
 
 [dev-dependencies]
 serde_json = "1.0.67"

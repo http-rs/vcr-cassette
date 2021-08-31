@@ -56,6 +56,7 @@ use std::{collections::HashMap, str::FromStr};
 use chrono::{offset::FixedOffset, DateTime};
 use serde::de::{self, MapAccess, Visitor};
 use serde::{Deserialize, Deserializer, Serialize};
+use url::Url;
 use void::Void;
 
 pub use chrono;
@@ -157,7 +158,7 @@ pub struct Status {
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Request {
     /// The Request URI.
-    pub uri: String,
+    pub uri: Url,
     /// The Request body.
     #[serde(deserialize_with = "string_or_struct")]
     pub body: Body,
